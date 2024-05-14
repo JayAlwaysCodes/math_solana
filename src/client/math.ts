@@ -29,8 +29,8 @@ export async function getLocalAccount() {
     const configYml = await fs.readFile(CONFIG_FILE_PATH, {encoding: 'utf8'});
     const keypairPath = await yaml.parse(configYml).keypair_path;
     localKeypair = await createKeypairFromFile(keypairPath);
-    const airdropRequest = await connection.requestAirdrop(localKeypair.publicKey, LAMPORTS_PER_SOL*2,);
-    await connection.confirmTransaction(airdropRequest);
+    // const airdropRequest = await connection.requestAirdrop(localKeypair.publicKey, LAMPORTS_PER_SOL*2,);
+    // await connection.confirmTransaction(airdropRequest);
 
     console.log(`Local account loaded successfully.`);
     console.log(`Local account's address is:`);

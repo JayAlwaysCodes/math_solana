@@ -11,7 +11,7 @@ class MathSquare {
 }
 
 const MathSquareSchema = new Map([
-    [MathSquare, {kind: 'struct', fields: [['sum', 'u32']]}],
+    [MathSquare, {kind: 'struct', fields: [['square', 'u32']]}],
 ]);
 
 const MATH_SIZE = borsh.serialize(
@@ -20,7 +20,7 @@ const MATH_SIZE = borsh.serialize(
 ).length;
 
 async function main() {
-    await math.example('sum', MATH_SIZE);
+    await math.example('square', MATH_SIZE);
 }
 
 main().then(
